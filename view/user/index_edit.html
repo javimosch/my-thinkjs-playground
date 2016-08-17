@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../_inc/layout/layout.head.html %>
+</head>
+
+<body>
+    <% include ../_inc/layout/layout.header.html %>
+        <div class="content">
+
+
+            <h2>Editing <%= data.first_name ? data.first_name : '' %> </h2>
+
+            <% if (affectedRows>0) { %>
+                <h2 class="hide-after-five">Item saved <%=  affectedRows %> </h2>
+                <% } %>
+                
+            <% include inc/user_form.html %>
+
+            <form method="post" action="/user/delete">
+                <input type="hidden" name="_id" value="<%=data._id%>"/>
+                <input type="submit" value="Delete"/>
+            </form>
+
+
+                    
+
+        </div>
+</body>
+
+</html>

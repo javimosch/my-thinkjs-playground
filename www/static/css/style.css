@@ -1,0 +1,25 @@
+.hide-after-five {
+    -moz-animation: hideAnimation 0s ease-in 5s forwards;
+    /* Firefox */
+    -webkit-animation: hideAnimation 0s ease-in 5s forwards;
+    /* Safari and Chrome */
+    -o-animation: hideAnimation 0s ease-in 5s forwards;
+    /* Opera */
+    animation: hideAnimation 0s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes hideAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes hideAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}

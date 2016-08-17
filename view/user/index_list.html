@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../_inc/layout/layout.head.html %>
+</head>
+
+<body>
+    <% include ../_inc/layout/layout.header.html %>
+        <div class="content">
+
+
+            <h2>Listing</h2>
+
+            <ul>
+                <% data.forEach(function(user){ %>
+                    <%#- include('inc/user_item.html', {data: user}); %>
+                    
+                    <li>
+    <a href="/user/edit/<%=user._id%>"><%= user.first_name %></a>
+</li>
+                    
+                <% }); %>
+            </ul>
+
+
+        </div>
+</body>
+
+</html>
